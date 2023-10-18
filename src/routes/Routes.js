@@ -1,21 +1,9 @@
-const mongoose = require('mongoose');
+const { Router } = require('express')
+const UserRoutes = require('./UserRouter')
 
-const userSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    password: {
-        type: String,
-        required: true
-    }
-});
+const routes = Router()
 
-const User = mongoose.model('User', userSchema);
+// Adiciona as rotas do usuário ao roteador principal
+routes.use('/users', UserRoutes)
 
-module.exports = User;
+module.exports = routes;
