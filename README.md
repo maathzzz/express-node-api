@@ -4,8 +4,10 @@
 
 - [ ] Endpoint de login (JWT)
 - [x] Endpoint de cadastro
-- [ ] Endpoint de editar perfil
+- [x] Endpoint de editar perfil
 - [x] Endpoint para listagem
+- [x] Endpoint para encontrar um usuário pelo ID
+- [x] Endpoint para apagar um usuário
 
 #### Pokemons
 

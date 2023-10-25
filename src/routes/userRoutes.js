@@ -23,5 +23,10 @@ userRoutes.delete("/delete/:id", async (req, res) => {
     await user.delete(req, res);
 });
 
+userRoutes.put("/update/:id", async (req, res) => {
+    const user = new UserController();
+    await user.update(req, res);
+});
+
 
 module.exports = userRoutes;
