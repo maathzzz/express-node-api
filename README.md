@@ -3,8 +3,9 @@
 #### Usuários 
 
 - [ ] Endpoint de login (JWT)
-- [ ] Endpoint de cadastro
-- [ ] Endpoint de cadastrar perfil
+- [x] Endpoint de cadastro
+- [ ] Endpoint de editar perfil
+- [x] Endpoint para listagem
 
 #### Pokemons
 
