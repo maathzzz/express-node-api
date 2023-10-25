@@ -3,7 +3,6 @@ const User = require('../../infra/schemas/userSchema');
 class UserController {
     async create(req, res) {
         const { name, email, password } = req.body;
-
         try {
             const user = await User.create({
                 name,
@@ -23,18 +22,42 @@ class UserController {
 
     async find(req, res) {
         try {
-
             const users = await User.find();
-
             return res.json(users);
 
         } catch (error) {
-
             return res.status(500).send({
                 error: "Registration Failed",
                 message: error
             })
+        }
+    }
 
+    async findUserById(req, res) {
+        try {
+            const { id } = req.params;
+            const user = await User.findById(id);
+            return res.json(user);
+
+        } catch (error) {
+            return res.status(500).send({
+                error: "Registration Failed",
+                message: error
+            })
+        }
+    }
+
+    async delete(req, res) {
+        try {
+            const { id } = req.params;
+            await User.findByIdAndDelete(id);
+            return res.json("User deleted");
+
+        } catch (error) {
+            return res.status(500).send({
+                error: "Deletion Failed",
+                message: error
+            })
         }
     }
 }
