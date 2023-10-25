@@ -1,9 +1,6 @@
-const { Router } = require('express')
-const UserRoutes = require('./UserRouter')
+const routes = require('express').Router()
+const userRoutes = require('./userRoutes')
 
-const routes = Router()
-
-// Adiciona as rotas do usuário ao roteador principal
-routes.use('/users', UserRoutes)
+routes.use('/users', userRoutes)
 
 module.exports = routes;

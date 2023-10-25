@@ -1,9 +1,10 @@
 const express = require('express')
 const routes = require('./routes/Routes')
 
-const App = express();
+const app = express();
 
-App.use(express.json());
-App.use(routes);
+app.use(express.json());
+app.use(routes);
 
-module.exports = App;
+module.exports = app;
+
