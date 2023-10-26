@@ -13,19 +13,68 @@ class PokemonController {
     }
   }
 
+  async findPokemonById(req, res) {
+    try {
+      const { id } = req.params;
+      const pokemon = await Pokemon.findById(id);
+      return res.status(200).json(pokemon);
+    } catch (error) {
+      return res.status(500).send({
+        error: "Find Failed",
+        message: error,
+      });
+    }
+  }
+
   async register(req, res) {
     try {
       const { name, types, abilities, weaknesses } = req.body;
+
       const pokemon = await Pokemon.create({
         name,
         types,
         abilities,
         weaknesses,
       });
+
       return res.status(201).json(pokemon);
     } catch (error) {
       return res.status(500).send({
         error: "Registration Failed",
+        message: error,
+      });
+    }
+  }
+
+  async update(req, res) {
+    try {
+      const { id } = req.params;
+      const { name, types, abilities, weaknesses } = req.body;
+
+      const pokemon = await Pokemon.findByIdAndUpdate(id, {
+        name: name,
+        types: types,
+        abilities: abilities,
+        weaknesses: weaknesses,
+      });
+
+      return res.status(200).json(pokemon);
+    } catch (error) {
+      return res.status(500).send({
+        error: "Update Failed",
+        message: error,
+      });
+    }
+  }
+
+  async delete(req, res) {
+    try {
+      const { id } = req.params;
+      await Pokemon.findByIdAndDelete(id);
+      return res.status(200).json("Pokemon deleted");
+    } catch (error) {
+      return res.status(500).send({
+        error: "Deletion Failed",
         message: error,
       });
     }

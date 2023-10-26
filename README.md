@@ -11,11 +11,11 @@
 
 #### Pokemons
 
-- [ ] Endpoint para listagem
-- [ ] Endpoint para criação
-- [ ] Endpoint para adição
-- [ ] Endpoint para exclusão
-- [ ] Endpoint para detalhamento
+- [x] Endpoint para listagem
+- [x] Endpoint para criação
+- [x] Endpoint para adição
+- [x] Endpoint para exclusão
+- [x] Endpoint para detalhamento
 
 ## Outros requerimentos
 

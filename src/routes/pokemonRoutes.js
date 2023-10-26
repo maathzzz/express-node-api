@@ -12,4 +12,16 @@ pokemonRoutes.post("/register", async (req, res) => {
   await pokemon.register(req, res);
 });
 
+pokemonRoutes.get("/:id", async (req, res) => {
+  await pokemon.findPokemonById(req, res);
+});
+
+pokemonRoutes.delete("/delete/:id", async (req, res) => {
+  await pokemon.delete(req, res);
+});
+
+pokemonRoutes.put("/update/:id", async (req, res) => {
+  await pokemon.update(req, res);
+});
+
 module.exports = pokemonRoutes;
