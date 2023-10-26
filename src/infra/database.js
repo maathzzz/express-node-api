@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
 
 module.exports = {
-    async open (uri) {
-        // mongoose.set('strictQuery', true);
+    async open(uri) {
         await mongoose.connect(uri);
     },
 
