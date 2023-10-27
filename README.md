@@ -22,4 +22,5 @@
 - [ ] Testing 
 - [ ] Documentação
 - [x] Variáveis de Ambiente
-- [ ] Mapeamento no Postman/Insomnia
+- [x] Mapeamento no Postman/Insomnia
+- [x] Uso do Docker
