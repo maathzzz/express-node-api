@@ -12,11 +12,13 @@ class AuthController {
                 return res.status(400).send({ error: 'User not found' });
             }
 
-            if (password !== user.password) {
+            // if (password !== user.password) {
+            //     return res.status(400).send({ error: 'Invalid password' });
+            // }
+
+            if(!await compare(password, user.password)){
                 return res.status(400).send({ error: 'Invalid password' });
             }
-
-            const auth = await compare(password, user.password);
             
             return res.status(200).json(user);
         } catch (error) {
