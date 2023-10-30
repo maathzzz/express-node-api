@@ -26,8 +26,13 @@ class UserController {
     }
   }
 
-  async create(req, res) {
+  async register(req, res) {
     const { name, email, password } = req.body;
+
+    if (await User.findOne({ email })) {
+      return res.status(400).send({ error: "User already exists" });
+    }
+
     try {
       const user = await User.create({
         name,

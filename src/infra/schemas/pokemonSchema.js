@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const pokemonSchema = new mongoose.Schema({
   name: {
     type: String,
+    unique: true,
     required: true,
   },
   types: {
@@ -15,7 +16,7 @@ const pokemonSchema = new mongoose.Schema({
   },
   weaknesses: {
     type: [String],
-    required: true,
+    // required: true,
   },
 });
 

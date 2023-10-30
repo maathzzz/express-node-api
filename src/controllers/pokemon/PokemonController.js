@@ -20,7 +20,7 @@ class PokemonController {
       return res.status(200).json(pokemon);
     } catch (error) {
       return res.status(500).send({
-        error: "Find Failed",
+        error: "Find Failed", 
         message: error,
       });
     }
@@ -29,6 +29,10 @@ class PokemonController {
   async register(req, res) {
     try {
       const { name, types, abilities, weaknesses } = req.body;
+
+      if (pokemon.FindOne({ name })) {
+        return res.status(400).send({ error: "Pokemon already exists" });
+      }
 
       const pokemon = await Pokemon.create({
         name,

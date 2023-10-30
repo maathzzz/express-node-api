@@ -9,7 +9,7 @@ userRoutes.get("/", async (req, res) => {
 });
 
 userRoutes.post("/register", async (req, res) => {
-  await user.create(req, res);
+  await user.register(req, res);
 });
 
 userRoutes.get("/:id", async (req, res) => {
