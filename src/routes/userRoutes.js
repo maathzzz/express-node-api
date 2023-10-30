@@ -1,4 +1,5 @@
 const { Router } = require('express');
+const authToken = require("../middlewares/authToken")
 const UserController = require('../controllers/user/UserController');
 
 const userRoutes = Router();
