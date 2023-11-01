@@ -26,6 +26,8 @@ class AuthController {
             const token = jwt.sign({ id: user._id }, SECRET, {
                 expiresIn: 86400,
             });
+
+            user.password = undefined;
             
             return res.status(200).send({user, token});
         } catch (error) {
